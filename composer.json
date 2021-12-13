@@ -26,7 +26,13 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "exclude-from-classmap": [
+            "vendor\\reliese\\laravel\\src\\Coders\\Model\\Factory.php"
+        ],
+        "files":[
+            "app\\VendorOverrides\\Reliese\\Coders\\Model\\Factory.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
