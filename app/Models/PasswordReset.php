@@ -1,31 +1,11 @@
 <?php
 
-/**
- * Created by Reliese Model.
- */
-
 namespace App\Models;
 
-use App\Traits\AdminModelTrait;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Base\PasswordReset as BasePasswordReset;
 
-/**
- * Class PasswordReset
- * 
- * @property string $email
- * @property string $token
- * @property Carbon|null $created_at
- *
- * @package App\Models
- */
-class PasswordReset extends Model
+class PasswordReset extends BasePasswordReset
 {
-	use AdminModelTrait;
-	protected $table = 'password_resets';
-	public $incrementing = false;
-	public $timestamps = false;
-
 	protected $hidden = [
 		'token'
 	];
