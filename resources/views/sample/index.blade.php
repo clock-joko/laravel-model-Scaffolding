@@ -25,8 +25,8 @@
 <table style="color: #fff">
     <thead>
         <tr>
-            @foreach($headers as $column)
-                <th>{{ $column }}</th>
+            @foreach($headers as $key => $column)
+                <th>{{ __($key) }}</th>
             @endforeach
         </tr>
     </thead>
@@ -36,7 +36,8 @@
                 <td>{{ $engineer->id }}</td>
                 <td>{{ $engineer->name }}</td>
                 <td>{{ $engineer->email }}</td>
-                <td>{{ $engineer->engineer_details->profile }}</td>
+                <td>{{ $engineer->engineer_detail->profile }}</td>
+                <td>{{ $engineer->engineer_detail->skill->name }}</td>
             </tr>
         @endforeach
     </tbody>

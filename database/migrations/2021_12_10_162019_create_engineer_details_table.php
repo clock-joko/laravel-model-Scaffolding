@@ -16,6 +16,7 @@ class CreateEngineerDetailsTable extends Migration
         Schema::create('engineer_details', function (Blueprint $table) {
             $table->id()->comment('ID');
             $table->foreignId('engineer_id')->unique()->constrained();
+            $table->foreignId('skill_id')->constrained();
             $table->text('profile')->nullable()->comment('プロフィール');
             $table->timestamps();
         });
@@ -28,6 +29,7 @@ class CreateEngineerDetailsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('engineer_details');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUserIdToEngineersTable extends Migration
+class CreateSkillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddUserIdToEngineersTable extends Migration
      */
     public function up()
     {
-        Schema::table('engineers', function (Blueprint $table) {
-            $table->foreignId('user_id')->unique()->constrained();
+        Schema::create('skills', function (Blueprint $table) {
+            $table->id()->comment('ID');
+            $table->string('name', 20)->comment('スキル名');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddUserIdToEngineersTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::table('engineers', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('skills');
     }
 }

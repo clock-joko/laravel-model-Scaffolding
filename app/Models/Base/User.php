@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class User
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $email
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Engineer $engineer
  *
  * @package App\Models\Base
@@ -36,7 +36,7 @@ class User extends Model
 		'email_verified_at'
 	];
 
-	protected $allRelations = [
+	public $allRelations = [
 		'engineer'
 	];
 

@@ -480,7 +480,7 @@ class Factory
             $relations[] = $constraint->name();
         }
         if ($relations) {
-            $body .= $this->class->field('allRelations', $relations, ['before' => "\n"]);
+            $body .= $this->class->field('allRelations', $relations, ['before' => "\n", 'visibility' => 'public']);
         }
 
         foreach ($model->getMutations() as $mutation) {

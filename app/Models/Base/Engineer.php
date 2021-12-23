@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Engineer
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $email
@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property int $user_id
- * 
+ *
  * @property User $user
  * @property EngineerDetail $engineer_detail
  *
@@ -33,6 +33,7 @@ class Engineer extends Model
 {
 	use SoftDeletes;
 	use AdminModelTrait;
+
 	protected $table = 'engineers';
 
 	protected $casts = [
@@ -45,7 +46,7 @@ class Engineer extends Model
 		'email' => 'Email'
 	];
 
-	protected $allRelations = [
+	public $allRelations = [
 		'user',
 		'engineer_detail'
 	];
